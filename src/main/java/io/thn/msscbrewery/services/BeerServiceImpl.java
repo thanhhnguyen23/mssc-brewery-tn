@@ -24,4 +24,10 @@ public class BeerServiceImpl implements BeerService {
                 .build();
     }
 
+    @Override
+    public BeerDto updateBeer(UUID beerId, BeerDto beerDto) {
+        // ! TODO: implement
+        return BeerDto.builder().build();
+    }
+
 }
