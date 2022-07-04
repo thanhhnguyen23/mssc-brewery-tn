@@ -19,6 +19,7 @@ import java.util.UUID;
 
 @RequestMapping("/api/v1/beer")
 @RestController
+@Deprecated
 public class BeerController {
 
     private final BeerService beerService;
@@ -37,7 +38,7 @@ public class BeerController {
         BeerDto savedDto = beerService.saveNewBeer(beerDto);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "/api/v1/beer/" + savedDto.getId().toString());
-        return new ResponseEntity(headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
     @PutMapping({"/{beerId}"})
